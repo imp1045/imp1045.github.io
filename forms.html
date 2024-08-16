@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Alien Abduction Order Form</title>
+    <link href="css/forms.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <section>
+        <h1>Alien Abduction Order Form</h1>
+        <p>
+          Fill out the form below to place an order for an alien abduction by
+          one of our fine UFOs.
+        </p>
+        <form
+          action="https://e3vwdl4bpd.execute-api.us-west-2.amazonaws.com/default/API2SES"
+          method="post"
+        >
+          <input
+            type="hidden"
+            name="send_to"
+            value="atomicflame4624@gmail.com"
+          />
+          <fieldset>
+            <legend>Your contact information</legend>
+
+            <label for="name">Your name</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Enter your name"
+            />
+
+            <label for="phone-no">Phone number</label>
+            <input
+              type="tel"
+              name="phone-no"
+              id="phone-no"
+              placeholder="phone-no"
+            />
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="Email" />
+          </fieldset>
+
+          <fieldset>
+            <legend>About your abduction</legend>
+            <label for="date">Requested date</label>
+            <input type="date" name="date" id="date" />
+
+            <label for="num">How many people would you like abducted?</label>
+            <input type="number" name="num" id="num" min="0" max="1000" />
+
+            <p>What type of UFO do you prefer?</p>
+
+            <label>
+              <input type="radio" name="ufo-type" value="classic" />
+              Classic oval UFO</label
+            >
+
+            <label>
+              <input checked type="radio" name="ufo-type" value="starwars" />
+              Star Wars-style Imperial cruiser
+            </label>
+
+            <label>
+              <input type="radio" name="ufo-type" value="Battlestar" />
+              Battlestar Galactica-style Viper
+            </label>
+            <label>
+              <input type="radio" name="ufo-type" value="borg" />
+              Borg-style cube
+            </label>
+
+            <label for="abd-type">
+              What type of abduction experience do you want?
+            </label>
+            <select name="abd-type" id="abd-type">
+              <option selected>Select one of the following</option>
+              <option value="tour">Tour of the solar system</option>
+              <option value="dinner">Alien dinner and discussion</option>
+              <option value="dance">Alien dance lessons</option>
+              <option value="whales">Whale watching</option>
+            </select>
+
+            <label for="comments">Special requests:</label>
+            <textarea
+              name="comments"
+              id="comments"
+              placeholder="Add your comments here:"
+            ></textarea>
+
+            <label>
+              <input type="checkbox" name="subscribe" checked />
+              Add me to your email list
+            </label>
+          </fieldset>
+          <!-- <input type="button" value="Submit" /> -->
+          <!-- <input type="reset" value="Reset" /> -->
+          <button type="submit">Submit</button>
+          <button type="reset">Reset</button>
+        </form>
+      </section>
+      <aside>
+        <h3>Our Location</h3>
+        <address>
+          Frontend Masters &middot; 60 South 6th Street &middot; Suite 3625
+          &middot; Minneapolis, MN 55402
+        </address>
+      </aside>
+    </div>
+    <script src="js/forms.js"></script>
+  </body>
+</html>
+
+<!-- 
+form tag : to collect input from users
+input element : to take different type of inputs from users.
+label element : to label the input elements
+
+name attribute : important for the script that will process our from.
+-> When we click submit button whole content is sent to the server for processing.
+-> The processing script on the server needs the name field 
+
+type attribute : have several types to take the input
+type="text" : collects text from user
+
+
+id vs name vs value :
+
+id    : id is for the label tag (value of id and for must be same )
+name  : is for back-end processing
+value : when we type something its the value (int radio and select we don't type anything so we write the values for ourselves )
+
+
+checked and selected:
+Boolean attributes to select something as predefined.
+
+
+action : 
+method : how the information in the form is transmitted to the server
+  get  : sends information over the URL
+  post : sends Information behind the scenes
+
+
+-->
